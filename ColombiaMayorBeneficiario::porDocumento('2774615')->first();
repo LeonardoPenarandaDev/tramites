@@ -1,0 +1,30 @@
+[90m= [39m[34;4mIlluminate\Database\Eloquent\Collection[39;24m {#5775
+    [34mall[39m: [
+      [34;4mApp\Models\ColombiaMayorBeneficiario[39;24m {#5774
+        [34mnumero_documento[39m: "[32m27747615[39m",
+        [34mnombre[39m: "[32mTERESA[39m",
+        [34mapellido[39m: "[32mROPERO FERRER[39m",
+      },
+      [34;4mApp\Models\ColombiaMayorBeneficiario[39;24m {#5769
+        [34mnumero_documento[39m: "[32m1917298[39m",
+        [34mnombre[39m: "[32mLUIS FRANCISCO[39m",
+        [34mapellido[39m: "[32mHERNANDEZ ORTIZ[39m",
+      },
+      [34;4mApp\Models\ColombiaMayorBeneficiario[39;24m {#5789
+        [34mnumero_documento[39m: "[32m5475593[39m",
+        [34mnombre[39m: "[32mSERGIO MIGUEL[39m",
+        [34mapellido[39m: "[32mCACERES VERA[39m",
+      },
+      [34;4mApp\Models\ColombiaMayorBeneficiario[39;24m {#637
+        [34mnumero_documento[39m: "[32m28001441[39m",
+        [34mnombre[39m: "[32mBLANCA SOFIA[39m",
+        [34mapellido[39m: "[32mHERRERA[39m",
+      },
+      [34;4mApp\Models\ColombiaMayorBeneficiario[39;24m {#5788
+        [34mnumero_documento[39m: "[32m1970622[39m",
+        [34mnombre[39m: "[32mPEDRO MARIA[39m",
+        [34mapellido[39m: "[32mSANTIESTEBIS GOMEZ[39m",
+      },
+    ],
+  }
+
