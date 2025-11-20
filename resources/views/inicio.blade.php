@@ -85,18 +85,19 @@
                             <option value="otros">OTROS</option>
                         </select>
                     </div>
-                    <div class="md:col-span-1">
+                    <div class="md:col-span-2">
                         <label class="block text-gray-700 font-semibold mb-2">Filtrar por palabras en el titulo</label>
                         <input type="text" id="buscar" placeholder="" class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-blue-500 transition duration-300">
                     </div>
-                    <div class="md:col-span-1 flex gap-2">
-                        <button class="boton-buscar flex-1 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-bold py-2 px-5 rounded-lg transition duration-300 transform hover:scale-105 shadow-lg" type="button" class="boton-buscar" onclick="filtrarTramites()">
+                    <div class="md:col-span-3 flex gap-2">
+                        
+                        <button class="boton-buscar flex-1 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-bold py-1 px-7 h-14 rounded transition duration-300 transform hover:scale-105 shadow" type="button" onclick="filtrarTramites()">
                             <i class="fas fa-search mr-2"></i>
                             Buscar
                         </button>
-                        <button class="boton-limpiar flex-1 bg-gradient-to-r from-red-600 to-blue-700 hover:from-red-700 hover:to-blue-800 text-white font-bold py-2 px-5 rounded-lg transition duration-300 transform hover:scale-105 shadow-lg" type="button" onclick="limpiarFiltro()">
-                            <i class="fas fa-search mr-2"></i>
-                            limpiar
+                        <button class="boton-limpiar flex-1 bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white font-bold py-1 px-7 h-14 rounded transition duration-300 transform hover:scale-105 shadow" type="button" onclick="limpiarFiltro()">
+                            <i class="fas fa-times mr-2"></i>
+                            Limpiar
                         </button>
                     </div>
                 </div>
