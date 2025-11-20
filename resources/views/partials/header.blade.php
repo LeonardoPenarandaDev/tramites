@@ -8,10 +8,6 @@
                          alt="Logo de la alcaldía de Cúcuta" 
                          class="h-16 w-auto">
                 </div>
-                <div class="hidden md:block">
-                    <h1 class="text-lg font-bold">Alcaldía de Cúcuta</h1>
-                    <p class="text-sm text-blue-200">Gobierno local</p>
-                </div>
             </div>
 
             <!-- Información de contacto -->
@@ -31,12 +27,10 @@
             </div>
         </div>
 
-        <!-- Menú de navegación (puedes agregarlo después) -->
 
     </div>
 </header>
 
-<!-- Menú móvil desplegable -->
 
 
 <script>
