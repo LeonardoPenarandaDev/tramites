@@ -1,0 +1,23 @@
+.resultados {
+    margin-top: 15px;
+}
+
+.resultados a {
+    display: block;
+    font-weight: bold;
+    font-size: 14px;
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+    text-decoration: none;
+    color: #2a5db0;
+    transition: background 0.3s;
+}
+
+.resultados a:hover {
+    background: #f1f1f1;
+}
+
+/* Transiciones suaves */
+.transition-all {
+    transition: all 0.3s ease;
+}
