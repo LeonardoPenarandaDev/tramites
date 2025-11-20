@@ -1,30 +1,10 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Certificado de Estratificación Socioeconómica - Alcaldía de Cúcuta</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-</head>
-<body class="bg-gray-50">
-    <!-- Header -->
-    <header class="bg-gradient-to-r from-blue-900 to-blue-700 text-white shadow-2xl">
-        <div class="container mx-auto px-1 py-6">
-            <div class="flex items-center justify-between">
-                <div class="flex items-center space-x-1">
-                    <div class="p-3 ">
-                        <img src="{{ asset('img/logob.png') }}" alt="Logo de la alcaldia de Cúcuta" width="20%">
-                    </div>
-                </div>
-                <div class="hidden md:flex items-center space-x-4">
-                    <i class="fas fa-phone-alt"></i>
-                    <span>Línea de atención: PBX: (60) (7)5960051  </span>
-                </div>
-            </div>
-        </div>
-    </header>
+@extends('layouts.app')
 
+@section('title', 'Alcaldía de Cúcuta-Tramites y Servicios')
+
+@section('content')
+<body class="bg-gray-50">
+    
     <!-- Breadcrumb -->
     <div class="bg-white border-b">
         <div class="container mx-auto px-4 py-3">
@@ -327,16 +307,6 @@
         </div>
     </main>
 
-    <!-- Footer -->
-    <footer class="bg-gray-800 text-white py-8 mt-16">
-        <div class="container mx-auto px-4">
-            <div class="text-center">
-                <p class="text-sm">© 2024 Alcaldía de Cúcuta - Todos los derechos reservados</p>
-                <p class="text-xs text-gray-400 mt-2">Norte de Santander, Colombia</p>
-            </div>
-        </div>
-    </footer>
-
     <script>
         function toggleAccordion(id) {
             const element = document.getElementById(id);
@@ -352,4 +322,4 @@
         }
     </script>
 </body>
-</html>
+@endsection

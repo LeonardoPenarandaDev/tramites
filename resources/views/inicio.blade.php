@@ -1,49 +1,12 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trámites y Servicios - Alcaldía de Cúcuta</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-</head>
-<style>
-        .resultados {
-            margin-top: 15px;
-        }
-        
-        .resultados a {
-            display: block;
-            font-weight: bold;
-            font-size: 14px;
-            padding: 8px;
-            border-bottom: 1px solid #ddd;
-            text-decoration: none;
-            color: #2a5db0;
-            transition: background 0.3s;
-        }
-        
-        .resultados a:hover {
-            background: #f1f1f1;
-        }    
-</style>
+@extends('layouts.app')
+
+@section('title', 'Alcaldía de Cúcuta-Tramites y Servicios')
+
+
+@section('content')
+
 <body class="bg-gradient-to-br from-blue-50 via-white to-green-50 min-h-screen">
     <!-- Header -->
-    <header class="bg-gradient-to-r from-blue-900 to-blue-700 text-white shadow-2xl">
-        <div class="container mx-auto px-1 py-6">
-            <div class="flex items-center justify-between">
-                <div class="flex items-center space-x-1">
-                    <div class="p-3 ">
-                        <img src="{{ asset('img/logob.png') }}" alt="Logo de la alcaldia de Cúcuta" width="20%">
-                    </div>
-                </div>
-                <div class="hidden md:flex items-center space-x-4">
-                    <i class="fas fa-phone-alt"></i>
-                    <span>Línea de atención: PBX: (60) (7)5960051  </span>
-                </div>
-            </div>
-        </div>
-    </header>
 
     <!-- Main Content -->
     <main class="container mx-auto px-4 py-12">
@@ -424,12 +387,10 @@
         }
         </script>
 
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-white mt-16 py-8">
-        <div class="container mx-auto px-4 text-center">
-            <p class="mb-2">&copy; 2024 Alcaldía de Cúcuta - Todos los derechos reservados</p>
-            <p class="text-gray-400 text-sm">Norte de Santander, Colombia</p>
-        </div>
-    </footer>
+
+
 </body>
-</html>
+
+
+
+@endsection
