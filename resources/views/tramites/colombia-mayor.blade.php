@@ -5,7 +5,6 @@
 
 
 @section('content')
-<body class="bg-gray-50">
 
 
     <!-- Contenido Principal -->
@@ -252,6 +251,5 @@
             this.value = this.value.replace(/[^0-9]/g, '');
         });
     </script>
-</body>
 
 @endsection
