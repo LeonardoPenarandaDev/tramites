@@ -2,35 +2,48 @@
 
 @section('title', 'Alcaldía de Cúcuta-Tramites y Servicios')
 
-
 @section('content')
 
-<body class="bg-gradient-to-br from-blue-50 via-white to-green-50 min-h-screen">
-    <!-- Header -->
+<style>
+    /* Paleta de colores principal según manual de identidad */
+    :root {
+        --rojo-bandera: #E01E38;
+        --rojo-digital: #ED1C24;
+        --negro-bandera: #000000;
+        --gris-oscuro: #58585A;
+        --gris-claro: #BBBCBC;
+        --blanco: #FFFFFF;
+        
+        /* Paleta complementaria */
+        --azul-principal: #0D58B3;
+        --amarillo-complementario: #FEC340;
+        --verde-complementario: #80CE8E;
+    }
+</style>
 
     <!-- Main Content -->
     <main class="container mx-auto px-4 py-12">
         <!-- Title Section -->
         <div class="text-center mb-12">
-            <h2 class="text-4xl font-bold text-gray-800 mb-4">
-                <i class="fas fa-clipboard-list text-blue-600 mr-3"></i>
+            <h2 class="text-4xl font-bold mb-4" style="color: var(--rojo-bandera);">
+                <i class="fas fa-clipboard-list mr-3"></i>
                 TRÁMITES Y SERVICIOS
             </h2>
             <p class="text-gray-600 text-lg">Realiza tus trámites de manera rápida y segura</p>
-            <div class="mt-4 h-1 w-32 bg-gradient-to-r from-blue-600 to-green-500 mx-auto rounded-full"></div>
+            <div class="mt-4 h-1 w-32 mx-auto rounded-full" style="background: linear-gradient(to right, var(--rojo-bandera), var(--verde-complementario));"></div>
         </div>
 
         <!-- Search Section -->
         <div class="bg-white rounded-2xl shadow-2xl p-8 mb-12 border border-gray-100">
-            <h3 class="text-2xl font-bold text-gray-800 mb-6 flex items-center">
-                <i class="fas fa-search text-blue-600 mr-3"></i>
+            <h3 class="text-2xl font-bold mb-6 flex items-center" style="color: var(--negro-bandera);">
+                <i class="fas fa-search mr-3" style="color: var(--rojo-bandera);"></i>
                 Busca tu trámite
             </h3>
             <form class="filtro-form">
                 <div class="grid md:grid-cols-3 gap-4">
                     <div class="md:col-span-1">
                         <label class="block text-gray-700 font-semibold mb-2">Tipo de Trámite</label>
-                        <select class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-blue-500 transition duration-300" id="categoria">
+                        <select class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none transition duration-300" style="focus:border-color: var(--rojo-bandera);" id="categoria">
                             <option>Escoger categoria</option>
                             <option value="hacienda">RENTAS E IMPUESTOS</option>
                             <option value="dads">DEPARTAMENTO ADMINISTRATIVO DE BIENESTAR SOCIAL</option>
@@ -50,15 +63,22 @@
                     </div>
                     <div class="md:col-span-2">
                         <label class="block text-gray-700 font-semibold mb-2">Filtrar por palabras en el titulo</label>
-                        <input type="text" id="buscar" placeholder="" class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-blue-500 transition duration-300">
+                        <input type="text" id="buscar" placeholder="" class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none transition duration-300">
                     </div>
                     <div class="md:col-span-3 flex gap-2">
-                        
-                        <button class="boton-buscar flex-1 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-bold py-1 px-7 h-14 rounded transition duration-300 transform hover:scale-105 shadow" type="button" onclick="filtrarTramites()">
+                        <button class="boton-buscar flex-1 text-white font-bold py-1 px-7 h-14 rounded transition duration-300 transform hover:scale-105 shadow" 
+                                style="background: var(--rojo-bandera);" 
+                                onmouseover="this.style.background='var(--rojo-digital)'" 
+                                onmouseout="this.style.background='var(--rojo-bandera)'"
+                                type="button" onclick="filtrarTramites()">
                             <i class="fas fa-search mr-2"></i>
                             Buscar
                         </button>
-                        <button class="boton-limpiar flex-1 bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white font-bold py-1 px-7 h-14 rounded transition duration-300 transform hover:scale-105 shadow" type="button" onclick="limpiarFiltro()">
+                        <button class="boton-limpiar flex-1 text-white font-bold py-1 px-7 h-14 rounded transition duration-300 transform hover:scale-105 shadow" 
+                                style="background: var(--gris-oscuro);" 
+                                onmouseover="this.style.background='var(--negro-bandera)'" 
+                                onmouseout="this.style.background='var(--gris-oscuro)'"
+                                type="button" onclick="limpiarFiltro()">
                             <i class="fas fa-times mr-2"></i>
                             Limpiar
                         </button>
@@ -69,25 +89,66 @@
             <div class="resultados" id="resultados">
                 <!-- Resultados aparecerán aquí -->
             </div>
-
         </div>
 
         <!-- Services Grid -->
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+            <!-- Oficina Virtual -->
+            <a href="https://oficinavirtual.tns.co/Home/Accesar?codemp=8905014349">
+                <div class="bg-white rounded-2xl shadow-xl hover:shadow-2xl transition duration-300 transform hover:-translate-y-2 overflow-hidden group">
+                    <div class="p-6 text-white" style="background: linear-gradient(135deg, var(--rojo-bandera), var(--rojo-digital));">
+                        <div class="flex justify-center mb-4">
+                            <div class="bg-white bg-opacity-20 p-4 rounded-full">
+                                <i class="fas fa-desktop text-5xl"></i>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-bold text-center">Oficina Virtual</h3>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-600 mb-4">Genera paz y salvo, paga impuestos, descarga certificados y consulta información de forma rápida y segura.</p>
+                        <button class="w-full text-white font-bold py-3 rounded-lg transition duration-300" style="background: var(--rojo-bandera);">
+                            <i class="fas fa-file-download mr-2"></i>
+                            Solicitar
+                        </button>
+                    </div>
+                </div>
+            </a>
+
+            <!-- PQRSDF -->
+            <a href="https://cucuta.gov.co/pqrdsf/">
+                <div class="bg-white rounded-2xl shadow-xl hover:shadow-2xl transition duration-300 transform hover:-translate-y-2 overflow-hidden group">
+                    <div class="p-6 text-white" style="background: linear-gradient(135deg, var(--azul-principal), #0a4a9a);">
+                        <div class="flex justify-center mb-4">
+                            <div class="bg-white bg-opacity-20 p-4 rounded-full">
+                                <i class="fas fa-comments text-5xl"></i>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-bold text-center">PQRSDF</h3>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-600 mb-4">Envía peticiones, quejas, reclamos, sugerencias, denuncias o felicitaciones de manera fácil y rápida.</p>
+                        <button class="w-full text-white font-bold py-3 rounded-lg transition duration-300" style="background: var(--azul-principal);">
+                            <i class="fas fa-file-download mr-2"></i>
+                            Solicitar
+                        </button>
+                    </div>
+                </div>
+            </a>
+
             <!-- Certificado de Estratificación -->
             <a href="{{ route('certificado-estratificacion') }}">
                 <div class="bg-white rounded-2xl shadow-xl hover:shadow-2xl transition duration-300 transform hover:-translate-y-2 overflow-hidden group">
-                    <div class="bg-gradient-to-br from-pink-500 to-red-500 p-6 text-white">
+                    <div class="p-6 text-white" style="background: linear-gradient(135deg, var(--verde-complementario), #6ab878);">
                         <div class="flex justify-center mb-4">
                             <div class="bg-white bg-opacity-20 p-4 rounded-full">
-                                <i class="fas fa-chart-bar text-5xl"></i>
+                                <i class="fas fa-home text-5xl"></i>
                             </div>
                         </div>
-                        <h3 class="text-xl font-bold text-center">Certificado de Estratificación Socioeconómica</h3>
+                        <h3 class="text-xl font-bold text-center">Certificado de Estratificación</h3>
                     </div>
                     <div class="p-6">
                         <p class="text-gray-600 mb-4">Obtén tu certificado de estratificación socioeconómica de forma digital.</p>
-                        <button class="w-full bg-gradient-to-r from-pink-500 to-red-500 hover:from-pink-600 hover:to-red-600 text-white font-bold py-3 rounded-lg transition duration-300">
+                        <button class="w-full text-white font-bold py-3 rounded-lg transition duration-300" style="background: var(--verde-complementario);">
                             <i class="fas fa-file-download mr-2"></i>
                             Solicitar
                         </button>
@@ -98,7 +159,7 @@
             <!-- Certificado de Riesgos -->
             <a href="https://cucuta.gov.co/consulta-concepto-de-riesgos/">
                 <div class="bg-white rounded-2xl shadow-xl hover:shadow-2xl transition duration-300 transform hover:-translate-y-2 overflow-hidden group">
-                    <div class="bg-gradient-to-br from-red-500 to-orange-500 p-6 text-white">
+                    <div class="p-6 text-white" style="background: linear-gradient(135deg, var(--amarillo-complementario), #f5b730);">
                         <div class="flex justify-center mb-4">
                             <div class="bg-white bg-opacity-20 p-4 rounded-full">
                                 <i class="fas fa-exclamation-triangle text-5xl"></i>
@@ -108,17 +169,18 @@
                     </div>
                     <div class="p-6">
                         <p class="text-gray-600 mb-4">Consulta y descarga el certificado de riesgos de tu propiedad.</p>
-                        <button class="w-full bg-gradient-to-r from-red-500 to-orange-500 hover:from-red-600 hover:to-orange-600 text-white font-bold py-3 rounded-lg transition duration-300">
+                        <button class="w-full text-white font-bold py-3 rounded-lg transition duration-300" style="background: var(--amarillo-complementario);">
                             <i class="fas fa-file-download mr-2"></i>
                             Solicitar
                         </button>
                     </div>
                 </div>
             </a>
+
             <!-- Concepto de Uso de Suelos -->
             <a href="https://cucuta.gov.co/consulta-uso-de-suelos/">
                 <div class="bg-white rounded-2xl shadow-xl hover:shadow-2xl transition duration-300 transform hover:-translate-y-2 overflow-hidden group">
-                    <div class="bg-gradient-to-br from-purple-500 to-pink-500 p-6 text-white">
+                    <div class="p-6 text-white" style="background: linear-gradient(135deg, var(--azul-principal), var(--verde-complementario));">
                         <div class="flex justify-center mb-4">
                             <div class="bg-white bg-opacity-20 p-4 rounded-full">
                                 <i class="fas fa-map-marked-alt text-5xl"></i>
@@ -128,35 +190,38 @@
                     </div>
                     <div class="p-6">
                         <p class="text-gray-600 mb-4">Solicita el concepto de uso de suelos para tu proyecto o inmueble.</p>
-                        <button class="w-full bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white font-bold py-3 rounded-lg transition duration-300">
+                        <button class="w-full text-white font-bold py-3 rounded-lg transition duration-300" style="background: var(--azul-principal);">
                             <i class="fas fa-file-download mr-2"></i>
                             Solicitar
                         </button>
                     </div>
                 </div>
             </a>
+
             <!-- Colombia Mayor -->
-            <div class="bg-white rounded-2xl shadow-xl hover:shadow-2xl transition duration-300 transform hover:-translate-y-2 overflow-hidden group">
-                <div class="bg-gradient-to-br from-blue-500 to-indigo-600 p-6 text-white">
-                    <div class="flex justify-center mb-4">
-                        <div class="bg-white bg-opacity-20 p-4 rounded-full">
-                            <i class="fas fa-users text-5xl"></i>
+            <a href="consulta-colombia-mayor">
+                <div class="bg-white rounded-2xl shadow-xl hover:shadow-2xl transition duration-300 transform hover:-translate-y-2 overflow-hidden group">
+                    <div class="p-6 text-white" style="background: linear-gradient(135deg, var(--rojo-bandera), var(--amarillo-complementario));">
+                        <div class="flex justify-center mb-4">
+                            <div class="bg-white bg-opacity-20 p-4 rounded-full">
+                                <i class="fas fa-users text-5xl"></i>
+                            </div>
                         </div>
+                        <h3 class="text-xl font-bold text-center">Consulta Colombia Mayor</h3>
                     </div>
-                    <h3 class="text-xl font-bold text-center">Consulta Programa Colombia Mayor</h3>
+                    <div class="p-6">
+                        <p class="text-gray-600 mb-4">Consulta el estado de tu registro en el programa Colombia Mayor.</p>
+                        <button class="w-full text-white font-bold py-3 rounded-lg transition duration-300" style="background: var(--rojo-bandera);">
+                            <i class="fas fa-search mr-2"></i>
+                            Consultar
+                        </button>
+                    </div>
                 </div>
-                <div class="p-6"><a href="consulta-colombia-mayor">
-                    <p class="text-gray-600 mb-4">Consulta el estado de tu registro en el programa Colombia Mayor.</p>
-                    <button class="w-full bg-gradient-to-r from-blue-500 to-indigo-600 hover:from-blue-600 hover:to-indigo-700 text-white font-bold py-3 rounded-lg transition duration-300">
-                        <i class="fas fa-search mr-2"></i>Consultar
-                        
-                    </button></a>
-                </div>
-            </div>
+            </a>
 
             <!-- Carta de Residencia -->
             <div class="bg-white rounded-2xl shadow-xl hover:shadow-2xl transition duration-300 transform hover:-translate-y-2 overflow-hidden group">
-                <div class="bg-gradient-to-br from-green-500 to-teal-500 p-6 text-white">
+                <div class="p-6 text-white" style="background: linear-gradient(135deg, var(--verde-complementario), var(--azul-principal));">
                     <div class="flex justify-center mb-4">
                         <div class="bg-white bg-opacity-20 p-4 rounded-full">
                             <i class="fas fa-envelope text-5xl"></i>
@@ -166,7 +231,7 @@
                 </div>
                 <div class="p-6">
                     <p class="text-gray-600 mb-4">Solicita tu carta de residencia de manera rápida y sencilla.</p>
-                    <button class="w-full bg-gradient-to-r from-green-500 to-teal-500 hover:from-green-600 hover:to-teal-600 text-white font-bold py-3 rounded-lg transition duration-300">
+                    <button class="w-full text-white font-bold py-3 rounded-lg transition duration-300" style="background: var(--verde-complementario);">
                         <i class="fas fa-file-download mr-2"></i>
                         Solicitar
                     </button>
@@ -176,7 +241,7 @@
             <!-- Formulario de Caracterización -->
             <a href="https://survey123.arcgis.com/share/7c447c4951794eefb433e145b6a0563c?portalUrl=https://portalarcgis.cucuta.gov.co/arcgis">
                 <div class="bg-white rounded-2xl shadow-xl hover:shadow-2xl transition duration-300 transform hover:-translate-y-2 overflow-hidden group">
-                    <div class="bg-gradient-to-br from-yellow-500 to-orange-500 p-6 text-white">
+                    <div class="p-6 text-white" style="background: linear-gradient(135deg, var(--amarillo-complementario), var(--rojo-digital));">
                         <div class="flex justify-center mb-4">
                             <div class="bg-white bg-opacity-20 p-4 rounded-full">
                                 <i class="fas fa-edit text-5xl"></i>
@@ -186,7 +251,7 @@
                     </div>
                     <div class="p-6">
                         <p class="text-gray-600 mb-4">¿Por qué queremos conocer tus necesidades y particularidades?</p>
-                        <button class="w-full bg-gradient-to-r from-yellow-500 to-orange-500 hover:from-yellow-600 hover:to-orange-600 text-white font-bold py-3 rounded-lg transition duration-300">
+                        <button class="w-full text-white font-bold py-3 rounded-lg transition duration-300" style="background: var(--amarillo-complementario);">
                             <i class="fas fa-pen mr-2"></i>
                             Ingresar aquí
                         </button>
@@ -196,27 +261,28 @@
         </div>
 
         <!-- Info Banner -->
-        <div class="bg-gradient-to-r from-blue-600 to-green-500 rounded-2xl shadow-2xl p-8 text-white">
+        <div class="rounded-2xl shadow-2xl p-8 text-white" style="background: linear-gradient(135deg, var(--rojo-bandera), var(--verde-complementario));">
             <div class="grid md:grid-cols-3 gap-6 text-center">
                 <div class="flex flex-col items-center">
                     <i class="fas fa-clock text-5xl mb-3"></i>
                     <h4 class="font-bold text-xl mb-2">Atención 24/7</h4>
-                    <p class="text-blue-100">Trámites digitales disponibles todo el tiempo</p>
+                    <p class="text-white text-opacity-90">Trámites digitales disponibles todo el tiempo</p>
                 </div>
                 <div class="flex flex-col items-center">
                     <i class="fas fa-shield-alt text-5xl mb-3"></i>
                     <h4 class="font-bold text-xl mb-2">Seguridad</h4>
-                    <p class="text-blue-100">Tus datos protegidos en cada transacción</p>
+                    <p class="text-white text-opacity-90">Tus datos protegidos en cada transacción</p>
                 </div>
                 <div class="flex flex-col items-center">
                     <i class="fas fa-mobile-alt text-5xl mb-3"></i>
                     <h4 class="font-bold text-xl mb-2">Accesibilidad</h4>
-                    <p class="text-blue-100">Desde cualquier dispositivo, en cualquier lugar</p>
+                    <p class="text-white text-opacity-90">Desde cualquier dispositivo, en cualquier lugar</p>
                 </div>
             </div>
         </div>
     </main>
-            <script>
+
+        <script>
         const tramites = [
             { nombre: "Traslado de cadáveres", categoria: "gobierno", url: "https://www.gov.co/ficha-tramites-y-servicios/T33627" },
             { nombre: "Prórroga de sorteo de rifas", categoria: "gobierno", url: "https://www.gov.co/ficha-tramites-y-servicios/T33569" },
@@ -368,16 +434,14 @@
             const busqueda = document.getElementById("buscar").value.toLowerCase();
             const resultadosDiv = document.getElementById("resultados");
         
-            // Filtrar trámites
             const resultados = tramites.filter(tramite =>
                 (categoria === "" || tramite.categoria === categoria) &&
                 (busqueda === "" || tramite.nombre.toLowerCase().includes(busqueda))
             );
         
-            // Mostrar resultados con enlaces
             resultadosDiv.innerHTML = resultados.length
-                ? resultados.map(tramite => `<a href="${tramite.url}" target="_blank">${tramite.nombre}</a>`).join("")
-                : "<p>No se encontraron resultados</p>";
+                ? resultados.map(tramite => `<a href="${tramite.url}" target="_blank" style="display: block; padding: 12px; margin: 8px 0; background: #f8f9fa; border-radius: 8px; color: var(--rojo-bandera); text-decoration: none; transition: all 0.3s;" onmouseover="this.style.background='var(--rojo-bandera)'; this.style.color='white';" onmouseout="this.style.background='#f8f9fa'; this.style.color='var(--rojo-bandera)';">${tramite.nombre}</a>`).join("")
+                : "<p style='color: var(--gris-oscuro); padding: 20px; text-align: center;'>No se encontraron resultados</p>";
         }
         
         function limpiarFiltro() {
@@ -385,12 +449,7 @@
             document.getElementById("buscar").value = "";
             document.getElementById("resultados").innerHTML = "";
         }
-        </script>
-
-
-
-</body>
-
+    </script>
 
 
 @endsection

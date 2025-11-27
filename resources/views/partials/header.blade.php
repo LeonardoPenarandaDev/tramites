@@ -3,18 +3,20 @@
         <div class="flex items-center justify-between">
             <!-- Logo -->
             <div class="flex items-center space-x-3">
-                <div class="p-2">
-                    <img src="{{ asset('img/logob.png') }}" 
+                <a href="https://www.cucuta.gov.co">
+                    <div class="p-2">
+                        <img src="{{ asset('img/logob.png') }}" 
                          alt="Logo de la alcaldía de Cúcuta" 
                          class="h-16 w-auto">
-                </div>
+                    </div>
+                </a>
             </div>
 
             <!-- Información de contacto -->
             <div class="hidden md:flex items-center space-x-4 bg-blue-800 px-4 py-2 rounded-lg">
                 <i class="fas fa-phone-alt text-blue-200"></i>
                 <div>
-                    <span class="text-sm font-semibold">Línea de atención:</span>
+                    <span class="text-sm font-semibold">Línea de atención:</span><div
                     <span class="text-sm">PBX: (60) (7) 5960051</span>
                 </div>
             </div>
